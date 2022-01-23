@@ -7,6 +7,8 @@ constructor(canvas){
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
     this.sprites= [];
+    this.t0 =0;
+    this.dt = 0;
 
 }
 desenhar(){
@@ -26,5 +28,14 @@ passo(dt){
 for (const sprite of this.sprites) {
     sprite.passo(dt);
 }
+}
+quadro(t){
+
+    this.t0 = this.t0 ?? t;
+    this.dt = (t - this.t0)/1000;
+   this.passo(this.dt);
+    this.desenhar();
+    this.t0 = t;
+
 }
 }
