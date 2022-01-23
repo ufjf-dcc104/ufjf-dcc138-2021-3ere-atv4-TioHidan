@@ -1,5 +1,5 @@
 export default class Sprite{
-
+// É responsavel por modelar algo que se move na tela.
 constructor({x=100,y=100, w=20,h=20, color="white" }={}){
     this.x = x;
     this.y = y;
