@@ -9,6 +9,7 @@ constructor(canvas){
     this.sprites= [];
     this.t0 =0;
     this.dt = 0;
+    this.idAnim = null;
 
 }
 desenhar(){
@@ -35,7 +36,18 @@ quadro(t){
     this.dt = (t - this.t0)/1000;
    this.passo(this.dt);
     this.desenhar();
+    this.iniciar();
     this.t0 = t;
 
+}
+iniciar(){
+
+this.idAnim = requestAnimationFrame( (t) =>
+ {this.quadro(t);});
+}
+parar(){
+cancelAnimationFrame(this.idAnim);
+this.t0 = null;
+this.dt = 0;
 }
 }
