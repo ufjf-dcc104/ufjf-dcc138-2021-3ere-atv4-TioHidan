@@ -85,6 +85,8 @@ for (const alvo of this.aRemover) {
         this.sprites.splice(idx,1);
     }
 }
+this.aRemover =[];
 }
+
 }
 
