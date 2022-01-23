@@ -38,6 +38,7 @@ quadro(t){
    this.passo(this.dt);
     this.desenhar();
     this.checaColisao();
+    this.removerSprites();
     this.iniciar();
     this.t0 = t;
 
@@ -74,6 +75,16 @@ quandoColidir(a,b){
   if(!this.aRemover.includes(b)){
     this.aRemover.push(b);
   }
+}
+removerSprites(){
+for (const alvo of this.aRemover) {
+    
+
+    const idx = this.sprites.indexOf(alvo);
+    if(idx>=0){
+        this.sprites.splice(idx,1);
+    }
+}
 }
 }
 
