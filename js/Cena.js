@@ -6,7 +6,8 @@ constructor(canvas){
 
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
-    this.sprites= [];
+    this.sprites = [];
+    this.aRemover = [];
     this.t0 =0;
     this.dt = 0;
     this.idAnim = null;
@@ -61,10 +62,18 @@ for (let a = 0; a < this.sprites.length -1; a++) {
         if(spriteA.colidiuCom(spriteB)){
 
         
-        console.log(spriteA, spriteB);
+        this.quandoColidir(spriteA, spriteB);
     }
 }
 }
+}
+quandoColidir(a,b){
+  if(!this.aRemover.includes(a)){
+    this.aRemover.push(a);
+  }
+  if(!this.aRemover.includes(b)){
+    this.aRemover.push(b);
+  }
 }
 }
 
