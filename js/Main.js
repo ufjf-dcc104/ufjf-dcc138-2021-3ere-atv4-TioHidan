@@ -1,7 +1,19 @@
+import AssetManager from "./AssetManager.js";
 import Cena from "./Cena.js";
 import Sprite from "./Sprite.js";
+const img1 = new image();
+img1.src="assets/garota.png";
+const img2 = new image();
+img2.src="assets/Skelly.png";
+const img3 = new image();
+img3.src="assets/orc.png";
+document.body.appendChild(img1);
+document.body.appendChild(img2);
+document.body.appendChild(img3);
+const assets = new AssetManager();
+
 const canvas = document.querySelector("canvas");
-const cena1 = new Cena(canvas);
+const cena1 = new Cena(canvas,assets);
 cena1.desenhar();
 const pc = new Sprite({vx : 10});
 const en1= new Sprite({x:140,w:30,color:"red"});
