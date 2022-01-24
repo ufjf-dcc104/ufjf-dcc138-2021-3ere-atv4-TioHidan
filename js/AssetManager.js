@@ -9,8 +9,13 @@ export default class AssetManager{
     carregaImagem(chave,source){
 
         const img1 = new Image();
+        img1.addEventListener("load", () => {
+           console.log(`Imagem ${this.carregadas}/${this.aCarregar} Carregada!`);
+           this.carregadas++;
+        });
 img1.src=source;
 this.imagens.set(chave,img1);
+this.aCarregar++;
     }
     img(chave){
 
@@ -23,5 +28,8 @@ this.imagens.set(chave,img1);
             return `${(this.carregadas/ this.aCarregar*100).toFixed(2)}%`;
         }
         return "Nada a carregar";
+    }
+    acabou(){
+        return this.carregadas === this.aCarregar;
     }
 }
