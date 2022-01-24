@@ -6,6 +6,7 @@ const assets = new AssetManager();
 assets.carregaImagem("garota","assets/garota.png");
 assets.carregaImagem("esqueleto","assets/Skelly.png");
 assets.carregaImagem("orc","assets/orc.png");
+assets.carregaAudio("moeda","assets/coin.wav");
 
 
 
